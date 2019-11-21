@@ -212,4 +212,5 @@ if __name__ == '__main__':
 
     for declaritive_base, classes in DECLARITIVE_BASE_MAPPING.items():
         declaritive_base.metadata.bind = SQL_ENGINE
-        migrate_schema(declaritive_base, classes)
+        # Don't migrate any tables. This produce exceptions, as they are already migrated
+        # migrate_schema(declaritive_base, classes)
